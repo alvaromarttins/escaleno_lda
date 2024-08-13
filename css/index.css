@@ -1,0 +1,323 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+
+    box-sizing: border-box;
+}
+
+:root{
+    font-size: 62.5%;
+
+    --cor1: #146363;
+    --cor2: #65FCFC;
+    --cor3: #009696;
+    --cor4: #99FFFF;
+    --cor5: #CCFFFF;
+    --cor6: #c8c8c8;
+    --cor7: #104e4e;
+    --black: #000;
+    --blackRoket: #121214;
+    --gray: #202024;
+    --white: #fff;
+    --lightWhite: #29292E;
+}
+body{
+    font-size: 1.6rem;
+    font-family: "Roboto", sans-serif;
+}
+
+.appContainer{
+    display: flex;
+}
+
+.sidebar{
+    position: fixed;
+
+    width: 20rem;
+    height: 100vh;
+    
+    background-color: var(--cor1);
+
+}
+.logoApp {
+    width: 3.5rem;
+    height: 3.5rem;
+
+    margin: 2rem 0 4rem 1rem;
+}
+.logoApp img{
+    width: 100%;
+    height: 100%;
+    
+    border-radius: 50%;
+}
+.sidebarNav ul{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    list-style: none;
+}
+.sidebarNav ul li{
+    /* padding: 0 1rem; */
+    /* background-color: yellow; */
+}
+.sidebarNav ul li:hover{
+    background-color: var(--cor7);
+}
+.sidebarNav ul li .sidebarNavName{
+    color: #FFF;
+}
+.sidebarNav ul li a{
+    display: block;
+    /* background-color: red; */
+    padding: 1rem;
+}
+
+.sidebarAccountInfo{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    width: 100%;
+
+    padding: 1rem;
+
+    margin-bottom: 2rem;
+
+    color: #FFF;
+}
+
+
+.appContent{
+    width: 100%;
+
+    padding: 1.6rem 2.5rem;
+
+    margin-left: 20rem;
+}
+.appContentHeader .appContentHeaderTitle{
+    font-size: 3.2rem;
+    line-height: 3.8rem;
+}
+.appContentActions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 1.2rem 0 2rem 0;
+}
+
+.appContentActionsSearchIcon{
+    font-size: 14px;
+    line-height: 24px;
+
+    border-radius: 4px;
+    padding: 0px 10px 0px 32px;
+
+    height: 32px;   
+    width: 100%;
+    max-width: 320px;
+    
+    transition: 0.2s;
+    
+    background: url('../assets/search.svg') left 1rem center no-repeat;
+    background-size: 16px;
+}
+
+.appContentActionsFilter{
+    /* background-color: red; */
+    transition: .3s all ease-in-out;
+}
+.filterContainer{
+    display: none;
+    position: fixed;
+    top: 0rem;
+    right: 0rem;
+
+    width: 30rem;
+    height: 100vh;
+    background-color: var(--blackRoket);
+    z-index: 1;
+    transition: .3s all ease-in-out;
+}
+
+.filterContent{
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+
+    width: 100%;
+    
+    margin-top: 5rem;
+    padding: 0 2rem;
+    
+    color: #FFF;
+}
+
+.filterContent .categoryWrapper, .cityWrapper, .statusWrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.checkbox-wrapper label {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    
+    width: max-content;
+
+    margin: 0;
+    cursor: pointer;
+}
+
+.checkbox-wrapper input{
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    
+    opacity: 0;
+    
+    cursor: pointer;
+}
+.checkbox-wrapper label::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    display: block;
+
+    border: 1px solid #E6E6F0;
+    border-radius: 8px;
+
+}
+
+.checkbox-wrapper input:checked + label::before{
+    background: url("data:image/svg+xml,%3Csvg width='18' height='14' viewBox='0 0 18 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 11.17L1.83 7L0.410004 8.41L6 14L18 2L16.59 0.589996L6 11.17Z' fill='%2342D3FF'/%3E%3C/svg%3E%0A") center no-repeat;
+
+}
+.checkbox-wrapper input:focus + label::before{
+    outline: 2px solid black;
+}
+.yearWrapper select, .submitFilter{
+    width: 100%;
+    padding: .8rem;
+    background-color: var(--white);
+    border: none;
+    border-radius: .2rem;
+    cursor: pointer;
+}
+.submitFilter{
+    margin-top: 2rem;
+    font-size: 1.4rem;
+    margin: auto;
+}
+.submitFilter:hover{
+    background-color: #e1e1e1;
+}
+
+
+
+
+
+
+
+
+
+.projectArea{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 30rem);
+    gap: 2rem;
+    justify-content: space-between;
+}
+.containerProject{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    width: 30rem;
+    min-height: 40rem;
+    
+    background-color: var(--cor7);
+    color: white;
+    
+    padding: 1rem;
+    border-radius: .4rem;
+
+    transition: .25s all ease-in-out;
+
+}
+.image{
+    width: 100%;
+    height: 25rem;
+    /* background-color: greenyellow;     */
+    border-radius: .4rem;
+}
+.image img{
+    border-radius: .4rem;
+    width: 100%;
+    height: 100%;
+}
+.image .imageName{
+    font-size: 1.9rem;
+}
+
+.projectBox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.6rem;
+}
+
+.name{
+    font-size: 1.8rem;
+    margin: 1.2rem 0;
+}
+.projectArea:has(.containerProject:hover) .containerProject:not(:hover) {
+    opacity: .9;
+    scale: .98;
+}
+
+
+@media (max-width: 762px){
+    .sidebar{
+        display: none;
+    }
+    .appContent{    
+        margin: 0;
+    }
+    .projectArea{
+        display: flex;
+        flex-direction: column;
+    }
+    .containerProject{
+        margin: auto;
+    }
+    .appContentActions input{
+        width: 85%;
+    }
+    .appContentActionsFilter{
+        background-color: red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* margin-right: 5rem; */
+        min-width: 0;
+        padding: 0;
+        margin: 0;
+        
+        position: relative;
+
+        .fa-filter{
+            /* background-color: rebeccapurple; */
+            /* width: fit-content; */
+            position: absolute;
+            left: -2rem;
+        }
+    }
+}

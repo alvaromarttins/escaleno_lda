@@ -1,0 +1,27 @@
+.fa-solid{
+    min-width: 2rem;
+    min-height: 2rem;
+    font-size: 2rem;
+    text-align: center;
+
+    margin-right: 2rem;
+    color: white;
+
+    /* background-color: red; */
+}
+.fa-filter{
+    color: var(--blackRoket);
+    cursor: pointer;
+}
+.fa-filter:hover{
+    color: var(--cor1);
+}
+.fa-xmark{
+    position: absolute;
+    top: 2rem;
+    right: 0rem;
+    cursor: pointer;
+}
+.fa-xmark:hover{
+    color: red;
+}

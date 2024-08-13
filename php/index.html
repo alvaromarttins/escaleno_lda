@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/icon.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="../js/filter.js" defer></script>
+    <script src="../js/search.js" defer></script>
+    <script src="../js/fi.js" defer></script>
+</head>
+<body>
+    <div class="appContainer">
+        <div class="sidebar">
+            <div class="sidebarHeader">
+                <div class="logoApp">
+                    <img src="../assets/logoEscaleno.jpg" alt="Logotipo da empresa Escaleno lda">
+                </div>
+            </div>
+            <div class="sidebarNav">
+                <ul>
+                    <li><a href="#">
+                        <span class="sidebarNavIcons"><i class="fa-solid fa-house"></i></span>
+                        <span class="sidebarNavName">Home</span>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="sidebarNavIcons"><i class="fa-solid fa-diagram-project"></i></span>
+                        <span class="sidebarNavName">Projectos</span>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="sidebarNavIcons"><i class="fa-solid fa-phone"></i></span>
+                        <span class="sidebarNavName">Contactos</span>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="sidebarNavIcons"><i class="fa-solid fa-id-badge"></i></span>
+                        <span class="sidebarNavName">Sobre</span>
+                    </a></li>
+                </ul>
+            </div>
+            <div class="sidebarAccountInfo">
+                <div class="accountInfo"><span>Ligar</span></div>
+            </div>
+        </div>
+
+
+
+        <div class="filterContainer" id="hidden">
+            <i class="fa-solid fa-xmark" onclick="fechar();"></i>
+
+            <div class="filterContent">
+                <div class="filterBy">
+                    <p>Filtrar por:</p>
+                </div>
+                <div class="categoryWrapper">
+                    <p>Categria:</p>
+ 
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="event-arquitecture">
+                        <label for="event-arquitecture">Arquitectura</label>
+                    </div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="event-engineering">
+                        <label for="event-engineering">Engenharia</label>
+                    </div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="event-interior-design">
+                        <label for="event-interior-design">Design de interiores</label>
+                    </div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="event-measurement">
+                        <label for="event-measurement">Medição</label>
+                    </div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="event-budgeting">
+                        <label for="event-budgeting">Orçamentação</label>
+                    </div>
+                </div>
+
+                <div class="statusWrapper">
+                    <p>Status:</p>
+ 
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="event-active">
+                        <label for="event-active">Activo</label>
+                    </div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="event-finish">
+                        <label for="event-finish">Concluido</label>
+                    </div>
+                </div>
+
+                <div class="cityWrapper">
+                    <p>Cidade:</p>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="event-maputo">
+                        <label for="event-maputo">Maputo</label>
+                    </div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="event-sofala">
+                        <label for="event-sofala">Sofala</label>
+                    </div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="event-inhambane">
+                        <label for="event-inhambane">Inhambane</label>
+                    </div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="event-nampula">
+                        <label for="event-nampula">Nampula</label>
+                    </div>
+                </div>
+                <div class="yearWrapper">
+                    <select name="" id="">
+                        <option value="">Selecione o ano</option>
+                        <option value="">2024</option>
+                        <option value="">2023</option>
+                        <option value="">2022</option>
+                        <option value="">2021</option>
+                        <option value="">2020</option>
+                        <option value="">2019</option>
+                        <option value="">2018</option>
+                    </select>
+                </div>
+                <input type="submit" value="Procurar" class="submitFilter">
+            </div>
+        </div>
+
+        <div class="appContent">
+            <div class="appContentHeader">
+                <h1 class="appContentHeaderTitle">Projectos</h1>
+            </div>
+            <!-- <div class="appContentActions">
+                <input type="text" placeholder="Pesquise aqui..." class="appContentActionsSearchIcon">
+                <div class="appContentActionsFilter"><i class="fa-solid fa-filter" onclick="filter();"></i></div>
+            </div> -->
+
+
+            <div class="appContentActions">
+                <input type="text" id="searchInput" placeholder="Pesquise aqui..." class="appContentActionsSearchIcon" oninput="filterProjects();">
+                <div class="appContentActionsFilter">
+                    <i class="fa-solid fa-filter" onclick="filter();"></i>
+                </div>
+            </div>
+            
+
+
+
+
+            <div class="projectArea">
+                <div class="containerProject">
+                    <div class="image">
+                        <img src="../assets/c8.jpg" alt="">
+                    </div>
+                    <div class="projectBox name">
+                        <span class="projectName">Arquitectura</span>
+                    </div>
+                    <div class="projectBox category">
+                        <span>Categoria</span>
+                        <span>Arquitectura</span>
+                    </div>
+                    <div class="projectBox status">
+                        <span>Status</span>
+                        <span>Concluido</span>
+                    </div>
+                    <div class="projectBox city">
+                        <span>Cidade</span>
+                        <span>Nampula</span>
+                    </div>
+                    <div class="projectBox year">
+                        <span>Ano</span>
+                        <span>2002</span>
+                    </div>
+                </div>
+                
+                <div class="containerProject">
+                    <div class="image">
+                        <img src="../assets/c1.jpg" alt="">
+                    </div>
+                    <div class="projectBox name">
+                        <span class="projectName">Engenharia</span>
+                    </div>
+                    <div class="projectBox category">
+                        <span>Categoria</span>
+                        <span>Design</span>
+                    </div>
+                    <div class="projectBox status">
+                        <span>Status</span>
+                        <span>Activo</span>
+                    </div>
+                    <div class="projectBox city">
+                        <span>Cidade</span>
+                        <span>Maputo</span>
+                    </div>
+                    <div class="projectBox year">
+                        <span>Ano</span>
+                        <span>2016</span>
+                    </div>
+                </div>
+                <div class="containerProject">
+                    <div class="image">
+                        <img src="../assets/c2.webp" alt="">
+                    </div>
+                    <div class="projectBox name">
+                        <span class="projectName">Hidraulica</span>
+                    </div>
+                    <div class="projectBox category">
+                        <span>Categoria</span>
+                        <span>Medição</span>
+                    </div>
+                    <div class="projectBox status">
+                        <span>Status</span>
+                        <span>Activo</span>
+                    </div>
+                    <div class="projectBox city">
+                        <span>Cidade</span>
+                        <span>Sofala</span>
+                    </div>
+                    <div class="projectBox year">
+                        <span>Ano</span>
+                        <span>2024</span>
+                    </div>
+                </div>
+                <div class="containerProject">
+                    <div class="image">
+                        <img src="../assets/c3.jpg" alt="">
+                    </div>
+                    <div class="projectBox name">
+                        <span class="projectName">Arquitectura</span>
+                    </div>
+                    <div class="projectBox category">
+                        <span>Categoria</span>
+                        <span>Arquitectura</span>
+                    </div>
+                    <div class="projectBox status">
+                        <span>Status</span>
+                        <span>Activo</span>
+                    </div>
+                    <div class="projectBox city">
+                        <span>Cidade</span>
+                        <span>Inhambane</span>
+                    </div>
+                    <div class="projectBox year">
+                        <span>Ano</span>
+                        <span>2024</span>
+                    </div>
+                </div>
+                <div class="containerProject">
+                    <div class="image">
+                        <img src="../assets/c4.jpg" alt="">
+                    </div>
+                    <div class="projectBox name">
+                        <span class="projectName">Arquitectura</span>
+                    </div>
+                    <div class="projectBox category">
+                        <span>Categoria</span>
+                        <span>Arquitectura</span>
+                    </div>
+                    <div class="projectBox status">
+                        <span>Status</span>
+                        <span>Activo</span>
+                    </div>
+                    <div class="projectBox city">
+                        <span>Cidade</span>
+                        <span>Nampula</span>
+                    </div>
+                    <div class="projectBox year">
+                        <span>Ano</span>
+                        <span>2024</span>
+                    </div>
+                </div>
+                <div class="containerProject">
+                    <div class="image">
+                        <img src="../assets/c5.jpg" alt="">
+                    </div>
+                    <div class="projectBox name">
+                        <span class="projectName">Arquitectura</span>
+                    </div>
+                    <div class="projectBox category">
+                        <span>Categoria</span>
+                        <span>Arquitectura</span>
+                    </div>
+                    <div class="projectBox status">
+                        <span>Status</span>
+                        <span>Activo</span>
+                    </div>
+                    <div class="projectBox city">
+                        <span>Cidade</span>
+                        <span>Maputo</span>
+                    </div>
+                    <div class="projectBox year">
+                        <span>Ano</span>
+                        <span>2024</span>
+                    </div>
+                </div>
+                <div class="containerProject">
+                    <div class="image">
+                        <img src="../assets/c6.jpg" alt="">
+                    </div>
+                    <div class="projectBox name">
+                        <span class="projectName">Arquitectura</span>
+                    </div>
+                    <div class="projectBox category">
+                        <span>Categoria</span>
+                        <span>Arquitectura</span>
+                    </div>
+                    <div class="projectBox status">
+                        <span>Status</span>
+                        <span>Activo</span>
+                    </div>
+                    <div class="projectBox city">
+                        <span>Cidade</span>
+                        <span>Maputo</span>
+                    </div>
+                    <div class="projectBox year">
+                        <span>Ano</span>
+                        <span>2024</span>
+                    </div>
+                </div>
+                <div class="containerProject">
+                    <div class="image">
+                        <img src="../assets/c7.jpg" alt="">
+                    </div>
+                    <div class="projectBox name">
+                        <span class="projectName">Arquitectura</span>
+                    </div>
+                    <div class="projectBox category">
+                        <span>Categoria</span>
+                        <span>Arquitectura</span>
+                    </div>
+                    <div class="projectBox status">
+                        <span>Status</span>
+                        <span>Activo</span>
+                    </div>
+                    <div class="projectBox city">
+                        <span>Cidade</span>
+                        <span>Maputo</span>
+                    </div>
+                    <div class="projectBox year">
+                        <span>Ano</span>
+                        <span>2024</span>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
